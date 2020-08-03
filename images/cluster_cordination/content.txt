@@ -1,0 +1,5 @@
+autohealer.png
+leader_election_2.png
+leader_election.png
+namespace.png
+servers_communication.png
