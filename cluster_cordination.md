@@ -1,4 +1,4 @@
-# Cluster cordination
+# Cluster coordination
 
 ## Terminology
 
@@ -15,7 +15,7 @@
 * **Deadlock**: when there is inter dependent of resources and waiting indefinitely.
 * **Inconsistency**: Partial failure of data.
 ## Zookeeper
-* **cluster cordination management**
+* **cluster coordination management**
 * **configuration management**: keeps the latest configuration of the node by having version. Any change in the node data, the version is bumped up.
 * health check and master re-election
 * all the nodes contacts zookeeper service(cluster).
@@ -53,7 +53,7 @@
 ![leader_election](images/cluster_cordination/leader_election_2.png)  
 This algorithm came into picture when the suppose the master gets down, all the nodes will at once come to the server for re-election and this is known as **herd effect**. So to minimize this, we will only listen to the node just before us.
 * whenever there is a new node added, get all the child nodes, sort them, and then, get the node just before the present node.
-* and then add a watcher on that node. If also this node dies then, the watcher will get triggered and then, we can again get the sortest node in the list.
+* and then add a watcher on that node. If also this node dies then, the watcher will get triggered and then, we can again get the previous shortest node in the list[after sorting the list, this works because, we are having sequential worker's name].
 * note, you will be watching the node deleted and not nodechildrenChange reason being, you are keeping a watcher on a single node.
 
 ### Auto healer
@@ -66,7 +66,7 @@ For cluster communication the main hurdle is to know the nodes around the cluste
 
 But this design has limitation, suppose, one of the node goes down, or suppose, one new node is to be added. In these cases the static configuration is needed to be updated. To solve it some system uses, services where you can upload the configuration and those services will replicate the configuration on to the cluster nodes. But this require manual intervention. 
 
-Using zookeeper service discovery, we don't need to have static configuration. Zookeeper takes care of updating the peer nodes dynamically.
+Using zookeeper service discovery, we don't need to have static configuration. Zookeeper takes care of updating the peer nodes dynamically.  
 ![service_discovery](images/cluster_cordination/service_discovery.png)  
 * master node flow chart
   * After a master node is elected, it unregisters itself from the serviceRegistery by deleting the node entry
