@@ -62,8 +62,8 @@ In the client-server model, the HTTP protocol is the standard protocol used. Fol
 * The HTTP protocol structure is as follows.
   * **Http method**:
     * **OPTION**: This is to check which all HTTP method are allowed.  
-    <img src="images/networking/option.png" width="400px">
-    * **GET**: Get data against an id (URI).
+    <img src="images/networking/option.png" width="400px">  
+    * **GET**: Get data against an id (URI).  
     * **POST**: Create a new entry. For this, we dont provide the id(URI), but we provide a request body, upon which a entry is created  
     <img src="images/networking/post.png" width="400px">  
     <img src="images/networking/post_response.png" width="400px">  
