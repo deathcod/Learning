@@ -62,17 +62,17 @@ In the client-server model, the HTTP protocol is the standard protocol used. Fol
 * The HTTP protocol structure is as follows.
   * **Http method**:
     * **OPTION**: This is to check which all HTTP method are allowed.  
-    <img src="images/networking/option.png" width="400px">  
+    <img src="images/networking/option.png" width="400px"><br>  
     * **GET**: Get data against an id (URI).  
     * **POST**: Create a new entry. For this, we dont provide the id(URI), but we provide a request body, upon which a entry is created  
-    <img src="images/networking/post.png" width="400px">  
-    <img src="images/networking/post_response.png" width="400px">  
+    <img src="images/networking/post.png" width="400px"><br>
+    <img src="images/networking/post_response.png" width="400px"><br>  
     * **PUT**: Update an entry. For this, we provide the id(URI), and also a request body upon which the actual body is updated.  
-    <img src="images/networking/put.png" width="400px">  
-    <img src="images/networking/put_response.png" width="400px">  
+    <img src="images/networking/put.png" width="400px"><br>
+    <img src="images/networking/put_response.png" width="400px"><br>  
     * **PATCH**: It is same as put but only difference is, in patch the body doesnt need to contain all the elements, it can pass only a specific key. But the response body will have all the key-value pair.  
-    <img src="images/networking/patch.png" width="400px">  
-    <img src="images/networking/patch_response.png" width="400px">  
+    <img src="images/networking/patch.png" width="400px"><br>
+    <img src="images/networking/patch_response.png" width="400px"><br>  
     * **DELETE**: This is to delete an entry just pass the URI
    
   * Each request has a relative **path** which points to the method in server. http://123.23.23.23:8080/`status` and path can also carry params like http://123.23.23.23:8080/`status?userId=12&type=student`
